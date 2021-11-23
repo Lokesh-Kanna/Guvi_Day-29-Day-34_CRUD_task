@@ -1,10 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { NavBar } from "./NavBar";
-import Button from "@mui/material/Button";
-import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import { useState } from "react";
 import { Distributer } from "./ContactCards";
+import { AddContactPage, AddContacts } from "./AddContacts";
 
 function App() {
   const contactList = [
@@ -131,12 +130,20 @@ function App() {
     },
   ];
   const [contact, setContact] = useState(contactList);
+
+  const setCon = (newContact) => {
+    setContact([...contact, newContact]);
+  };
   return (
     <div className="App">
       <Routes>
         <Route
           path="/"
           element={<Home contact={contact} setContact={setContact} />}
+        />
+        <Route
+          path="/add-contact"
+          element={<AddContactPage setCon={setCon} />}
         />
       </Routes>
     </div>
@@ -149,19 +156,6 @@ function Home({ contact, setContact }) {
       <NavBar />
       <AddContacts />
       <Distributer contact={contact} setContact={setContact} />
-    </div>
-  );
-}
-
-function AddContacts() {
-  return (
-    <div>
-      <Button className="butn" variant="contained">
-        <div className="addbtn">
-          <ControlPointIcon />
-          Add contact
-        </div>
-      </Button>
     </div>
   );
 }

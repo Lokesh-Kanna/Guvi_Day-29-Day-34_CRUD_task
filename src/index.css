@@ -36,3 +36,16 @@ code {
   height: 100%;
   width: 10rem;
 }
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+  margin-top: 1rem;
+}
+
+.standard-basic {
+  width: 20rem;
+}
