@@ -16,6 +16,15 @@ code {
   color: whitesmoke !important;
 }
 
+.butn {
+  margin-top: 2rem !important;
+}
+
+.addbtn {
+  display: flex !important;
+  align-items: center;
+}
+
 .carddisp {
   display: flex;
   flex-wrap: wrap;
