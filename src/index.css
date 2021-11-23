@@ -46,6 +46,7 @@ code {
   margin-top: 1rem;
 }
 
-.standard-basic {
+.standard-basic,
+.filled-required {
   width: 20rem;
 }

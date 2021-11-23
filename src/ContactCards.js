@@ -1,6 +1,7 @@
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import { useNavigate } from "react-router-dom";
 
 export function Distributer({ contact, setContact }) {
   return (
@@ -40,6 +41,7 @@ function ContactCard({
   setContact,
   contact,
 }) {
+  const navigate = useNavigate();
   const address = `${street}, ${city}, ${country}`;
   return (
     <div>
@@ -60,7 +62,13 @@ function ContactCard({
               </p>
             </div>
             <div className="card-action">
-              <IconButton aria-label="delete" color="primary">
+              <IconButton
+                aria-label="delete"
+                color="primary"
+                onClick={() => {
+                  navigate("/edit-contact/" + id);
+                }}
+              >
                 <EditIcon />
               </IconButton>
               <IconButton
