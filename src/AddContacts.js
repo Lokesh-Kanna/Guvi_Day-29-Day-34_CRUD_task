@@ -44,6 +44,12 @@ export function AddContactPage({ setCon }) {
   // };
 
   const formValidationSchema = yup.object({
+    name: yup
+      .string()
+      .max(20, "Woah, the name is too long 🤔")
+      .required(
+        "We can't identify the person without a name. So, please enter a name 😊"
+      ),
     phone: yup
       .string()
       .min(10, "This doesnt seem to be a valid phone number 🤔")
@@ -95,6 +101,7 @@ export function AddContactPage({ setCon }) {
           onChange={handleChange}
           onBlur={handleBlur}
         />
+        {errors.name && touched.name && errors.name}
         <TextField
           className="standard-basic"
           label="Phone No."
