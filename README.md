@@ -1,4 +1,6 @@
 # Getting Started with Create React App
+netlify link
+https://hardcore-bhaskara-65b1fd.netlify.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
